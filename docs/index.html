@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nagarjun Reddy Kamireddi™ | The 7,200-Page Enterprise AI, Claude Code & SAP RAG Masterbook</title>
+  <meta name="description" content="Official 50-Chapter Daily Release Vault by Nagarjun Reddy Kamireddi (Lead AI Architect | Ex-John Deere, GSK, Deloitte | 300+ Hours Live Enterprise AI Training)." />
+  <style>
+    :root {
+      --bg: #050811;
+      --card: #0F172A;
+      --gold: #F59E0B;
+      --gold-light: #FDE68A;
+      --cyan: #38BDF8;
+      --emerald: #34D399;
+      --text: #F8FAFC;
+      --muted: #94A3B8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+      background: radial-gradient(circle at 80% 0%, #172554 0%, #050811 50%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .sticky-bar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(5, 8, 17, 0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .crest-mini { display: flex; align-items: center; gap: 12px; }
+    .seal {
+      background: linear-gradient(135deg, #F59E0B, #B45309); color: #050811;
+      font-weight: 900; padding: 6px 12px; border-radius: 8px; letter-spacing: 1px; font-size: 15px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 48px 24px 80px; }
+    .hero {
+      background: linear-gradient(145deg, rgba(15,23,42,0.92), rgba(23,37,84,0.5));
+      border: 1px solid rgba(251, 191, 36, 0.35); border-radius: 24px;
+      padding: 44px 40px; margin-bottom: 40px; box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    }
+    .eyebrow { color: var(--gold); font-weight: 800; letter-spacing: 1.8px; font-size: 13px; text-transform: uppercase; margin-bottom: 12px; }
+    h1 { font-size: clamp(32px, 5vw, 54px); line-height: 1.08; font-weight: 850; letter-spacing: -1.2px; margin-bottom: 18px; }
+    .gold { color: var(--gold); } .cyan { color: var(--cyan); }
+    .lead { font-size: 19px; color: #CBD5E1; max-width: 880px; margin-bottom: 26px; }
+    .pedigree {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;
+    }
+    .badge {
+      background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #E0F2FE; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+    }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 22px; border-radius: 12px; font-weight: 700; font-size: 15px;
+      text-decoration: none; transition: transform 0.15s ease, opacity 0.15s ease; cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); opacity: 0.95; }
+    .btn-gold { background: linear-gradient(135deg, #F59E0B, #D97706); color: #050811; }
+    .btn-cyan { background: linear-gradient(135deg, #38BDF8, #0284C7); color: #050811; }
+    .btn-outline { border: 1px solid rgba(248,250,252,0.3); color: var(--text); background: rgba(15,23,42,0.6); }
+    .btn-follow { background: rgba(56,189,248,0.14); border: 1px solid rgba(56,189,248,0.45); color: #38BDF8; width: 100%; }
+    .stats-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 48px;
+    }
+    .stat-box {
+      background: rgba(15,23,42,0.85); border: 1px solid rgba(148,163,184,0.18);
+      border-radius: 18px; padding: 22px 24px;
+    }
+    .stat-num { font-size: 32px; font-weight: 850; color: var(--gold); }
+    .stat-lbl { font-size: 14px; color: var(--muted); margin-top: 4px; }
+    .section-title { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .section-sub { color: var(--muted); margin-bottom: 22px; font-size: 16px; }
+    .slide-strip {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;
+      margin-bottom: 52px;
+    }
+    .slide-strip img {
+      width: 100%; border-radius: 14px; border: 1px solid rgba(251,191,36,0.28);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    }
+    .controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; align-items: center; }
+    .search-input {
+      flex: 1; min-width: 240px; padding: 12px 16px; border-radius: 12px;
+      border: 1px solid rgba(148,163,184,0.3); background: #0B1120; color: #fff; font-size: 15px;
+    }
+    .filter-btn {
+      padding: 9px 15px; border-radius: 999px; border: 1px solid rgba(148,163,184,0.28);
+      background: #0F172A; color: #CBD5E1; cursor: pointer; font-size: 13px; font-weight: 600;
+    }
+    .filter-btn.active { background: var(--gold); color: #050811; border-color: var(--gold); }
+    .grid-cards {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px;
+    }
+    .ch-card {
+      background: rgba(15,23,42,0.88); border: 1px solid rgba(148,163,184,0.18);
+      border-radius: 18px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+    }
+    .ch-card.unlocked { border: 1.5px solid var(--gold); background: linear-gradient(155deg, rgba(245,158,11,0.12), rgba(15,23,42,0.95)); }
+    .ch-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .pill { font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.7px; }
+    .pill-open { background: rgba(52, 211, 153, 0.18); color: var(--emerald); border: 1px solid rgba(52,211,153,0.45); }
+    .pill-lock { background: rgba(251, 191, 36, 0.13); color: var(--gold-light); border: 1px solid rgba(251,191,36,0.3); }
+    .track-tag { font-size: 12px; color: var(--muted); font-weight: 600; }
+    .ch-card h3 { font-size: 18px; line-height: 1.3; }
+    .ch-card p { font-size: 14px; color: #94A3B8; }
+    .ch-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+    .recruiter-box {
+      margin-top: 56px; padding: 34px; border-radius: 22px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(15,23,42,0.94));
+      border: 1px solid rgba(56,189,248,0.4);
+    }
+    footer {
+      margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(148,163,184,0.16);
+      color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sticky-bar">
+    <div class="crest-mini">
+      <span class="seal">NRK™</span>
+      <div>
+        <strong style="font-size:15px;">Nagarjun Reddy Kamireddi™</strong>
+        <span style="color:#94A3B8;font-size:13px;margin-left:8px;">Enterprise AI, Claude Code &amp; SAP RAG Masterbook</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;">
+      <a class="btn btn-gold" style="padding:8px 16px;font-size:13px;" href="chapters/NRK_Masterbook_Chapter_01_Claude_Code_Foundation.pdf" target="_blank">Download Ch 01 PDF</a>
+      <a class="btn btn-cyan" style="padding:8px 16px;font-size:13px;" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="hero">
+      <div class="eyebrow">NAGARJUN REDDY KAMIREDDI™ • AUTHOR-OWNED ORIGINAL CURRICULUM</div>
+      <h1>The 7,200-Page <span class="gold">Claude Code, Production Agentic AI</span> &amp; <span class="cyan">SAP RAG</span> Masterbook Series</h1>
+      <p class="lead">Personally created and taught across <strong>300+ hours of live engineering cohorts</strong> by <strong>Nagarjun Reddy Kamireddi</strong>. Releasing <strong>1 complete, hands-on chapter every day for free</strong>—from first terminal agent loop to governed multi-agent swarms, MCP, LLM Evals, and autonomous SAP S/4HANA architectures.</p>
+      <div class="pedigree">
+        <span class="badge">Lead Enterprise AI Architect</span>
+        <span class="badge">Ex-John Deere • GSK • Deloitte</span>
+        <span class="badge">750K+ Production AI Workflows / Yr</span>
+        <span class="badge">AWS Solutions Architect Pro</span>
+        <span class="badge">NVIDIA Agentic AI Certified</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="chapters/NRK_Masterbook_Chapter_01_Claude_Code_Foundation.pdf" target="_blank">Download Chapter 01 (Trademarked PDF) ↓</a>
+        <a class="btn btn-cyan" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">Follow Nagarjun on LinkedIn for Chapters 02–50 →</a>
+        <a class="btn btn-outline" href="#recruiter">Fortune 500 Leadership &amp; Hiring Brief</a>
+      </div>
+    </section>
+
+    <section class="stats-row">
+      <div class="stat-box"><div class="stat-num">7,200+</div><div class="stat-lbl">Original Manual &amp; Handbook Pages Authored</div></div>
+      <div class="stat-box"><div class="stat-num">300+ Hrs</div><div class="stat-lbl">Live Production AI &amp; Claude Code Training</div></div>
+      <div class="stat-box"><div class="stat-num">750K+/Yr</div><div class="stat-lbl">Enterprise Workflows Governed in Production</div></div>
+      <div class="stat-box"><div class="stat-num">50 Drops</div><div class="stat-lbl">Daily Chapter Releases Exclusively via LinkedIn</div></div>
+    </section>
+
+    <section id="viewer">
+      <h2 class="section-title">Inside Today's Release: <span class="gold">Chapter 01 (Unlocked)</span></h2>
+      <p class="section-sub">Swipe/preview all 10 trademarked pages below or download the full high-DPI PDF for your engineering team.</p>
+      <div class="slide-strip">
+        <img src="assets/ch01_slides/slide_01.png" alt="Chapter 01 Page 1" loading="lazy" />
+<img src="assets/ch01_slides/slide_02.png" alt="Chapter 01 Page 2" loading="lazy" />
+<img src="assets/ch01_slides/slide_03.png" alt="Chapter 01 Page 3" loading="lazy" />
+<img src="assets/ch01_slides/slide_04.png" alt="Chapter 01 Page 4" loading="lazy" />
+<img src="assets/ch01_slides/slide_05.png" alt="Chapter 01 Page 5" loading="lazy" />
+<img src="assets/ch01_slides/slide_06.png" alt="Chapter 01 Page 6" loading="lazy" />
+<img src="assets/ch01_slides/slide_07.png" alt="Chapter 01 Page 7" loading="lazy" />
+<img src="assets/ch01_slides/slide_08.png" alt="Chapter 01 Page 8" loading="lazy" />
+<img src="assets/ch01_slides/slide_09.png" alt="Chapter 01 Page 9" loading="lazy" />
+<img src="assets/ch01_slides/slide_10.png" alt="Chapter 01 Page 10" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="syllabus">
+      <h2 class="section-title">Complete 50-Chapter Daily Unlock Roadmap</h2>
+      <p class="section-sub">New chapters unlock every morning at 08:30 AM GST. Follow <strong>Nagarjun Reddy Kamireddi</strong> on LinkedIn so you never miss a chapter.</p>
+      <div class="controls">
+        <input id="q" class="search-input" type="search" placeholder="Search 50 chapters (e.g. CLAUDE.md, Subagents, Hooks, MCP, SAP, FDE, KV Cache)..." />
+        <button class="filter-btn active" onclick="setTrack('ALL', this)">All 50 Chapters</button>
+        <button class="filter-btn" onclick="setTrack('Claude Code', this)">Claude Code</button>
+        <button class="filter-btn" onclick="setTrack('Agentic Engineering', this)">Agentic &amp; Evals</button>
+        <button class="filter-btn" onclick="setTrack('SAP & Enterprise ERP', this)">SAP &amp; ERP AI</button>
+        <button class="filter-btn" onclick="setTrack('Fortune 500 Career & FDE', this)">FDE &amp; Careers</button>
+      </div>
+      <div class="grid-cards" id="cards">
+        
+        <div class="ch-card unlocked" data-track="Claude Code" data-search="claude code & the 5-land ai architecture: zero to first agent loop claude code chapter 1">
+          <div class="ch-top">
+            <span class="pill pill-open">CHAPTER 01 • UNLOCKED TODAY</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Claude Code & The 5-Land AI Architecture: Zero to First Agent Loop</h3>
+          <p>10-Page Trademarked Visual Edition + 15-Minute Hands-On Lab. Authored by Nagarjun Reddy Kamireddi™.</p>
+          <div class="ch-actions">
+            <a class="btn btn-gold" href="chapters/NRK_Masterbook_Chapter_01_Claude_Code_Foundation.pdf" target="_blank">Download Chapter 01 PDF ↓</a>
+            <a class="btn btn-outline" href="#viewer">Read Inline</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="mapping unfamiliar enterprise codebases in 5 minutes & safe diffs claude code chapter 2">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 02 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Mapping Unfamiliar Enterprise Codebases in 5 Minutes & Safe Diffs</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="claude.md mastery: engineering permanent project & architecture memory claude code chapter 3">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 03 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>CLAUDE.md Mastery: Engineering Permanent Project & Architecture Memory</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="plan mode & permission guardrails: think before touching production claude code chapter 4">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 04 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Plan Mode & Permission Guardrails: Think Before Touching Production</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="SAP & Enterprise ERP" data-search="practical rag for sap teams (mm, sd, fi/co & sales grounding) sap & enterprise erp chapter 5">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 05 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">SAP & Enterprise ERP</span>
+          </div>
+          <h3>Practical RAG for SAP Teams (MM, SD, FI/CO & Sales Grounding)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="custom slash commands: automating daily engineering workflows claude code chapter 6">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 06 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Custom Slash Commands: Automating Daily Engineering Workflows</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Fortune 500 Career & FDE" data-search="forward-deployed ai engineer (fde) interview playbook: top 30 scenarios fortune 500 career & fde chapter 7">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 07 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Fortune 500 Career & FDE</span>
+          </div>
+          <h3>Forward-Deployed AI Engineer (FDE) Interview Playbook: Top 30 Scenarios</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="claude code subagents: orchestrating specialist engineering teams claude code chapter 8">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 08 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Claude Code Subagents: Orchestrating Specialist Engineering Teams</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="reusable agent skills: encoding team architecture standards claude code chapter 9">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 09 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Reusable Agent Skills: Encoding Team Architecture Standards</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="claude code hooks: deterministic policy, security & lint gates claude code chapter 10">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 10 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Claude Code Hooks: Deterministic Policy, Security & Lint Gates</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="model context protocol (mcp) live trace: connecting databases & crms agentic engineering chapter 11">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 11 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>Model Context Protocol (MCP) Live Trace: Connecting Databases & CRMs</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="SAP & Enterprise ERP" data-search="sap fi/co hybrid search & reranking: why gbb/vbr must never return gbb/vax sap & enterprise erp chapter 12">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 12 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">SAP & Enterprise ERP</span>
+          </div>
+          <h3>SAP FI/CO Hybrid Search & Reranking: Why GBB/VBR Must Never Return GBB/VAX</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="background tasks, checkpoints & rewind: long-running agent operations claude code chapter 13">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 13 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Background Tasks, Checkpoints & Rewind: Long-Running Agent Operations</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="vs code & jetbrains native terminal-to-ide agent workflows claude code chapter 14">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 14 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>VS Code & JetBrains Native Terminal-to-IDE Agent Workflows</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="claude code in github actions ci/cd: automated pr & release gates claude code chapter 15">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 15 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Claude Code in GitHub Actions CI/CD: Automated PR & Release Gates</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="headless claude code: scripting deterministic multi-step pipelines claude code chapter 16">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 16 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Headless Claude Code: Scripting Deterministic Multi-Step Pipelines</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="multi-agent workflows: governed enterprise swarms without chaos agentic engineering chapter 17">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 17 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>Multi-Agent Workflows: Governed Enterprise Swarms Without Chaos</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="reliability engineering for ai agents: 503 retries, backoff & circuit breakers agentic engineering chapter 18">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 18 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>Reliability Engineering for AI Agents: 503 Retries, Backoff & Circuit Breakers</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="SAP & Enterprise ERP" data-search="idempotency in financial & erp agents: preventing double writes sap & enterprise erp chapter 19">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 19 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">SAP & Enterprise ERP</span>
+          </div>
+          <h3>Idempotency in Financial & ERP Agents: Preventing Double Writes</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="the 4-layer agent evaluation system: golden datasets & 91% llm-as-judge agentic engineering chapter 20">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 20 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>The 4-Layer Agent Evaluation System: Golden Datasets & 91% LLM-as-Judge</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="budgeted context compilers: selection, ranking, provenance & compression agentic engineering chapter 21">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 21 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>Budgeted Context Compilers: Selection, Ranking, Provenance & Compression</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="llm inference under the hood: tokenization, prefill, kv cache & vllm agentic engineering chapter 22">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 22 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>LLM Inference Under the Hood: Tokenization, Prefill, KV Cache & vLLM</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="ai finops: cutting cost-per-completed-workflow 60-80% via ai gateways agentic engineering chapter 23">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 23 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>AI FinOps: Cutting Cost-Per-Completed-Workflow 60-80% via AI Gateways</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="owasp agentic security: mcp tool poisoning, non-human identities & least agency agentic engineering chapter 24">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 24 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>OWASP Agentic Security: MCP Tool Poisoning, Non-Human Identities & Least Agency</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="SAP & Enterprise ERP" data-search="autonomous sap business data cloud, datasphere & joule studio swarms sap & enterprise erp chapter 25">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 25 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">SAP & Enterprise ERP</span>
+          </div>
+          <h3>Autonomous SAP Business Data Cloud, Datasphere & Joule Studio Swarms</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Fortune 500 Career & FDE" data-search="production enterprise ai masterbook — advanced module #26 (300-hour live lab series) fortune 500 career & fde chapter 26">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 26 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Fortune 500 Career & FDE</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #26 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="production enterprise ai masterbook — advanced module #27 (300-hour live lab series) claude code chapter 27">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 27 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #27 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="production enterprise ai masterbook — advanced module #28 (300-hour live lab series) agentic engineering chapter 28">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 28 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #28 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="SAP & Enterprise ERP" data-search="production enterprise ai masterbook — advanced module #29 (300-hour live lab series) sap & enterprise erp chapter 29">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 29 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">SAP & Enterprise ERP</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #29 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Fortune 500 Career & FDE" data-search="production enterprise ai masterbook — advanced module #30 (300-hour live lab series) fortune 500 career & fde chapter 30">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 30 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Fortune 500 Career & FDE</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #30 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="production enterprise ai masterbook — advanced module #31 (300-hour live lab series) claude code chapter 31">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 31 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #31 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="production enterprise ai masterbook — advanced module #32 (300-hour live lab series) agentic engineering chapter 32">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 32 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #32 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="SAP & Enterprise ERP" data-search="production enterprise ai masterbook — advanced module #33 (300-hour live lab series) sap & enterprise erp chapter 33">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 33 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">SAP & Enterprise ERP</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #33 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Fortune 500 Career & FDE" data-search="production enterprise ai masterbook — advanced module #34 (300-hour live lab series) fortune 500 career & fde chapter 34">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 34 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Fortune 500 Career & FDE</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #34 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="production enterprise ai masterbook — advanced module #35 (300-hour live lab series) claude code chapter 35">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 35 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #35 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="production enterprise ai masterbook — advanced module #36 (300-hour live lab series) agentic engineering chapter 36">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 36 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #36 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="SAP & Enterprise ERP" data-search="production enterprise ai masterbook — advanced module #37 (300-hour live lab series) sap & enterprise erp chapter 37">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 37 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">SAP & Enterprise ERP</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #37 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Fortune 500 Career & FDE" data-search="production enterprise ai masterbook — advanced module #38 (300-hour live lab series) fortune 500 career & fde chapter 38">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 38 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Fortune 500 Career & FDE</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #38 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="production enterprise ai masterbook — advanced module #39 (300-hour live lab series) claude code chapter 39">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 39 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #39 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="production enterprise ai masterbook — advanced module #40 (300-hour live lab series) agentic engineering chapter 40">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 40 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #40 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="SAP & Enterprise ERP" data-search="production enterprise ai masterbook — advanced module #41 (300-hour live lab series) sap & enterprise erp chapter 41">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 41 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">SAP & Enterprise ERP</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #41 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Fortune 500 Career & FDE" data-search="production enterprise ai masterbook — advanced module #42 (300-hour live lab series) fortune 500 career & fde chapter 42">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 42 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Fortune 500 Career & FDE</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #42 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="production enterprise ai masterbook — advanced module #43 (300-hour live lab series) claude code chapter 43">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 43 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #43 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="production enterprise ai masterbook — advanced module #44 (300-hour live lab series) agentic engineering chapter 44">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 44 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #44 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="SAP & Enterprise ERP" data-search="production enterprise ai masterbook — advanced module #45 (300-hour live lab series) sap & enterprise erp chapter 45">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 45 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">SAP & Enterprise ERP</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #45 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Fortune 500 Career & FDE" data-search="production enterprise ai masterbook — advanced module #46 (300-hour live lab series) fortune 500 career & fde chapter 46">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 46 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Fortune 500 Career & FDE</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #46 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Claude Code" data-search="production enterprise ai masterbook — advanced module #47 (300-hour live lab series) claude code chapter 47">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 47 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Claude Code</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #47 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Agentic Engineering" data-search="production enterprise ai masterbook — advanced module #48 (300-hour live lab series) agentic engineering chapter 48">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 48 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Agentic Engineering</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #48 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="SAP & Enterprise ERP" data-search="production enterprise ai masterbook — advanced module #49 (300-hour live lab series) sap & enterprise erp chapter 49">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 49 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">SAP & Enterprise ERP</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #49 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+        <div class="ch-card locked" data-track="Fortune 500 Career & FDE" data-search="production enterprise ai masterbook — advanced module #50 (300-hour live lab series) fortune 500 career & fde chapter 50">
+          <div class="ch-top">
+            <span class="pill pill-lock">CHAPTER 50 • DROPPING ON LINKEDIN</span>
+            <span class="track-tag">Fortune 500 Career & FDE</span>
+          </div>
+          <h3>Production Enterprise AI Masterbook — Advanced Module #50 (300-Hour Live Lab Series)</h3>
+          <p>Releasing sequentially at 08:30 AM GST on Nagarjun Reddy Kamireddi's official LinkedIn feed.</p>
+          <div class="ch-actions">
+            <a class="btn btn-follow" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">+ Follow on LinkedIn to Unlock →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recruiter" class="recruiter-box">
+      <div class="eyebrow" style="color:#38BDF8;">FORTUNE 500 EXECUTIVE AI ARCHITECTURE &amp; RECRUITER BRIEF</div>
+      <h2 style="font-size:28px;margin-bottom:12px;">About the Author: Nagarjun Reddy Kamireddi</h2>
+      <p style="color:#CBD5E1;margin-bottom:18px;max-width:920px;">With 22+ years across global enterprise data, ERP, and production AI ecosystems—including leadership deliveries across <strong>John Deere, GSK, and Deloitte</strong>—Nagarjun architects governed multi-agent systems, hybrid RAG pipelines, LLM evaluation harnesses (750K+ workflows/year), and autonomous SAP S/4HANA &amp; Business Data Cloud solutions that move beyond pilot theater into audited ROI.</p>
+      <div class="hero-cta">
+        <a class="btn btn-cyan" href="https://www.linkedin.com/in/nagarjuna-kamireddy/" target="_blank" rel="noopener">Connect / InMail on LinkedIn →</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 <strong>Nagarjun Reddy Kamireddi™</strong>. All Rights Reserved. Original Author-Owned Curriculum.</span>
+      <span>Official LinkedIn: <a href="https://www.linkedin.com/in/nagarjuna-kamireddy/" style="color:#38BDF8;">linkedin.com/in/nagarjuna-kamireddy</a></span>
+    </footer>
+  </div>
+
+  <script>
+    let activeTrack = 'ALL';
+    function setTrack(track, btn) {
+      activeTrack = track;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterCards();
+    }
+    function filterCards() {
+      const q = document.getElementById('q').value.trim().toLowerCase();
+      document.querySelectorAll('.ch-card').forEach(card => {
+        const matchTrack = activeTrack === 'ALL' || card.dataset.track === activeTrack;
+        const matchQ = !q || card.dataset.search.includes(q);
+        card.style.display = (matchTrack && matchQ) ? 'flex' : 'none';
+      });
+    }
+    document.getElementById('q').addEventListener('input', filterCards);
+  </script>
+</body>
+</html>
