@@ -1,7 +1,8 @@
 # Nagarjuna Reddy Kamireddy™ — The 7,200-Page Enterprise AI, Claude Code & SAP RAG Masterbook
 
 > **Official Live Interactive Portal & Daily Chapter Vault:** [https://nagarjunak-pixel.github.io/nrk-enterprise-ai-masterbook/](https://nagarjunak-pixel.github.io/nrk-enterprise-ai-masterbook/)  
-> **Official Author LinkedIn (Follow for Daily Chapter Releases):** [Nagarjuna Reddy Kamireddy (`linkedin.com/in/nagarjuna-kamireddy`)](https://www.linkedin.com/in/nagarjuna-kamireddy/)
+> **Official Author LinkedIn (Follow for Daily Chapter Releases):** [Nagarjuna Reddy Kamireddy (`linkedin.com/in/nagarjuna-kamireddy`)](https://www.linkedin.com/in/nagarjuna-kamireddy/)  
+> **Official Author Portfolio, Case Studies & Master CV:** [https://nagarjunak-pixel.github.io/](https://nagarjunak-pixel.github.io/) · [`llms-full.txt`](https://nagarjunak-pixel.github.io/llms-full.txt)
 
 ---
 
