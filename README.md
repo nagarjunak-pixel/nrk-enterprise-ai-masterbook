@@ -18,8 +18,9 @@ Instead of locking this practical engineering library behind a paywall, one comp
 ---
 
 ## Unlocked Chapters
-- **[Chapter 01 — Claude Code & The 5-Land AI Architecture: From Zero to First Agent Loop (PDF)](docs/chapters/NRK_Masterbook_Chapter_01_Claude_Code_Foundation.pdf)** ✅ *Unlocked Today*
-- **Chapters 02–50:** Releasing daily at **08:30 AM GST** — [**+ Follow Nagarjuna Reddy Kamireddy on LinkedIn**](https://www.linkedin.com/in/nagarjuna-kamireddy/) so you never miss a drop.
+- **[Chapter 01 — Claude Code & The 5-Land AI Architecture: From Zero to First Agent Loop (PDF)](docs/chapters/NRK_Masterbook_Chapter_01_Claude_Code_Foundation.pdf)** ✅ *Unlocked*
+- **[Chapter 02 — Mapping Unfamiliar Enterprise Codebases in 5 Minutes & Safe Diffs (PDF)](docs/chapters/NRK_Masterbook_Chapter_02_Codebase_Mapping_Safe_Diffs.pdf)** ✅ *Unlocked Today*
+- **Chapters 03–50:** Releasing daily at **08:30 AM GST** — [**+ Follow Nagarjuna Reddy Kamireddy on LinkedIn**](https://www.linkedin.com/in/nagarjuna-kamireddy/) so you never miss a drop.
 
 ---
 
